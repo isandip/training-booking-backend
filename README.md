@@ -91,118 +91,20 @@ Copy code
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-link>
+git clone https://github.com/isandip/training-booking-backend.git
 cd training-booking-backend
 Install dependencies:
 
 bash
-Copy code
+
 npm install
 Run the server:
 
 bash
-Copy code
+
 npm start
 Server runs at:
-
-arduino
-Copy code
 http://localhost:5000
 Test endpoints using Postman or frontend integration.
-
-Example Flow
-Create user:
-
-http
-Copy code
-POST /users
-Content-Type: application/json
-
-{ "name": "Alice" }
-Response:
-
-json
-Copy code
-{
-  "message": "User created",
-  "user": { "id": 1, "name": "Alice" }
-}
-Get trainings:
-
-http
-Copy code
-GET /trainings
-Response:
-
-json
-Copy code
-[
-  { "id": 1, "title": "React Basics", "totalSeats": 5, "availableSeats": 5 },
-  { "id": 2, "title": "Node.js Fundamentals", "totalSeats": 3, "availableSeats": 3 }
-]
-Book a training:
-
-http
-Copy code
-POST /bookings/1/book
-Content-Type: application/json
-
-{ "userId": 1 }
-Response:
-
-json
-Copy code
-{
-  "message": "Booking successful",
-  "booking": {
-    "trainingId": 1,
-    "trainingTitle": "React Basics",
-    "userId": 1,
-    "userName": "Alice"
-  },
-  "remainingSeats": 4
-}
-View user bookings:
-
-h
-Copy code
-GET /bookings/user/1
-Response:
-
-json
-Copy code
-{
-  "user": { "id": 1, "name": "Alice" },
-  "bookings": [
-    { "trainingId": 1, "trainingTitle": "React Basics" }
-  ]
-}
-Cancel a booking (optional enhancement):
-
-http
-Copy code
-POST /bookings/1/cancel
-Content-Type: application/json
-
-{ "userId": 1 }
-Response:
-
-json
-Copy code
-{
-  "message": "Booking canceled successfully",
-  "training": { "id": 1, "title": "React Basics", "totalSeats": 5, "availableSeats": 5 },
-  "user": { "id": 1, "name": "Alice" },
-  "remainingSeats": 5
-}
-Notes
-In-memory storage is used, so data resets when the server restarts
-
-Added optional APIs for user creation and booking cancellation to support frontend testing
-
-Frontend can directly consume these APIs for dynamic booking management
-
-vbnet
-Copy code
 
 ---
