@@ -45,9 +45,6 @@ training-booking-backend/
 │ └── users.js
 └── package.json
 
-yaml
-Copy code
-
 ---
 
 ## API Endpoints
@@ -90,19 +87,16 @@ Copy code
 
 1. Clone the repository:
 
-```bash
 git clone https://github.com/isandip/training-booking-backend.git
 cd training-booking-backend
-Install dependencies:
 
-bash
+Install dependencies:
 
 npm install
 Run the server:
 
-bash
-
 npm start
+
 Server runs at:
 http://localhost:5000
 Test endpoints using Postman or frontend integration.
