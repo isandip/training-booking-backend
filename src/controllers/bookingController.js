@@ -7,6 +7,7 @@ const findUserById = (id) => users.find(u => u.id === id);
 const findTrainingById = (id) => trainings.find(t => t.id === id);
 
 // Book a training for a user
+// Book a training for a user
 exports.bookTraining = (req, res) => {
   const trainingId = parseInt(req.params.trainingId);
   const userId = parseInt(req.body.userId);
@@ -26,18 +27,28 @@ exports.bookTraining = (req, res) => {
   if (alreadyBooked)
     return res.status(400).json({ message: "User already booked this training" });
 
+  // Decrement seats
   training.availableSeats--;
+
+  // Generate unique reference number
+  const referenceNumber = `BOOK-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
   const newBooking = {
     trainingId: training.id,
     trainingTitle: training.title,
     userId: user.id,
-    userName: user.name
+    userName: user.name,
+    referenceNumber, // <-- added
   };
 
   bookings.push(newBooking);
 
-  res.json({ message: "Booking successful", booking: newBooking, remainingSeats: training.availableSeats });
+  res.json({
+    message: "Booking successful",
+    booking: newBooking,
+    remainingSeats: training.availableSeats,
+    referenceNumber, // send separately as well
+  });
 };
 
 // Get all bookings for a user
