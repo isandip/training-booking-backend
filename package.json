@@ -1,0 +1,30 @@
+{
+  "name": "training-booking-backend",
+  "version": "1.0.0",
+  "description": "Node.js + Express backend for Training / Lab Booking System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node src/app.js",
+  "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isandip/training-booking-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/isandip/training-booking-backend/issues"
+  },
+  "homepage": "https://github.com/isandip/training-booking-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
