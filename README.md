@@ -88,9 +88,10 @@ training-booking-backend/
 1. Clone the repository:
 
 git clone https://github.com/isandip/training-booking-backend.git
+
 cd training-booking-backend
 
-Install dependencies:
+2. Install dependencies:
 
 npm install
 Run the server:
