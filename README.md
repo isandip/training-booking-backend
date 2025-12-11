@@ -100,6 +100,7 @@ npm start
 
 Server runs at:
 http://localhost:5000
+
 Test endpoints using Postman or frontend integration.
 
 ---
